@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: stg_stripe__payment
+    description: One record per payment, derived from the raw stripe payment data.
+    columns:
+      - name: payment_id
+        description: Primary key for the payment table.
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: Foreign key for the order table.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_jaffle_shop__orders')
+              field: order_id
+
