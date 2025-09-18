@@ -32,7 +32,7 @@ models:
       - name: order_date
         description: Date when the order was placed.
       - name: status
-        description: Current status of the order.
+        description: "{{ doc('order_status') }}"
         tests:
           - accepted_values:
               values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
