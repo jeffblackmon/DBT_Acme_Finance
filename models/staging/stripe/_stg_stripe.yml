@@ -16,4 +16,5 @@ models:
           - relationships:
               to: ref('stg_jaffle_shop__orders')
               field: order_id
-
+      - name: order_status
+        description: "{{ doc('order_status') }}"
